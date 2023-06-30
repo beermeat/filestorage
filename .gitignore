@@ -1,0 +1,6 @@
+/.env
+/docker-compose.yml
+/.idea
+/data/*
+!/data/cat.jpg
+

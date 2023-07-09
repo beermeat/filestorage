@@ -12,13 +12,13 @@ Nginx + Minio + Imgproxy
 
 # Imgproxy crop url examples (see presets.example.conf)
 
-    curl http://127.0.0.1:8080/i/200x200/cat.jpg
-    curl http://127.0.0.1:8080/i/200x200/cat.jpg
-    curl http://127.0.0.1:8080/i/400x400-fit/cat.jpg
+    wget http://127.0.0.1:8080/i/200x200/cat.jpg
+    wget http://127.0.0.1:8080/i/400x400/cat.jpg
+    wget http://127.0.0.1:8080/i/400x400-fit/cat.jpg
 
 # Get origin file (via nginx secure link module)
 
-    curl http://127.0.0.1:8080/o/cat.jpg?sign=phWwxR_5LWYgQ_FKnVu8Xw&expires=9223372036854775807
+You have to sign link:
 
 ```php
 function signLink(string $url, string $secret, int $expires): string
@@ -36,5 +36,5 @@ echo signLink("http://127.0.0.1:8080/o/cat.jpg", "nginxsupersecret", PHP_INT_MAX
 // http://127.0.0.1:8080/o/cat.jpg?sign=phWwxR_5LWYgQ_FKnVu8Xw&expires=9223372036854775807
 ```
 
-    curl http://127.0.0.1:8080/o/cat.jpg?sign=phWwxR_5LWYgQ_FKnVu8Xw&expires=9223372036854775807
+    wget http://127.0.0.1:8080/o/cat.jpg?sign=phWwxR_5LWYgQ_FKnVu8Xw&expires=9223372036854775807
 
